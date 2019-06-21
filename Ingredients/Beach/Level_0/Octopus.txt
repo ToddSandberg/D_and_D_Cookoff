@@ -1,0 +1,7 @@
+Cookbook level: 1
+
+Preparation: Remove beak
+
+Taste: tastes like octopus (similar to lobster)
+
+Resources: Octopus meat
