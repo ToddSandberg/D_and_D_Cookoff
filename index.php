@@ -5,6 +5,10 @@
 </head>
 <body>
 	<h1><a href="/d_and_d_cookoff">D&D Cookoff</a></h1><br/>
+	<form action="/d_and_d_cookoff/search.php" method="get">
+		<input type="text" name="file">
+		<input type="submit" value="Search">
+	</form></br>
 	<?php
 		$dirs = array_filter(glob('*'), 'is_dir');
 		foreach($dirs as $value){
