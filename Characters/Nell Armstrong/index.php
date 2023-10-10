@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php generateHeader(); ?>
-    <p><b>Locations:</b> <?php createLink("Maps/Town/", "Spice Store"); ?></p>
+    <p><b>Locations:</b> <?php createLink("Maps/Newham/", "Spice Store"); ?></p>
     <p>Bulky man with (cookoff equivalent) australian accent.</p>
 	<p>Sells a large variety of spices, including a special premium blend.</p>
 </body>
