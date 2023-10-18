@@ -14,15 +14,19 @@
 
         switch($_POST['functionname']) {
             case 'createNewPage':
-               $path = $_POST['arguments'];
-               mkdir($path);
-               $newFile = fopen($path.'/index.php', "w");
-               fwrite($newFile, getBasePageHTML());
-               break;
+                $path = $_POST['arguments'];
+                //mkdir($path);
+                echo $path;
+                $relativePath = getRelativePath($path);
+                echo $relativePath;
+                // TODO commenting out until can specify name
+                //$newFile = fopen($path.'/index.php', "w");
+                //fwrite($newFile, getBasePageHTML());
+                break;
 
             default:
-               $aResult['error'] = 'Not found function '.$_POST['functionname'].'!';
-               break;
+                $aResult['error'] = 'Not found function '.$_POST['functionname'].'!';
+                break;
         }
 
     }

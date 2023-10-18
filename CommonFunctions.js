@@ -1,8 +1,8 @@
-function callPHPUtilityFunction(functionname, args) {
+function callPHPUtilityFunction(functionname, args, relativePath) {
     console.log(`calling ${functionname} with arguments ${args}`);
     jQuery.ajax({
         type: "POST",
-        url: 'Apis.php',
+        url: relativePath + 'Apis.php',
         dataType: 'json',
         data: {functionname, arguments: args},
 
