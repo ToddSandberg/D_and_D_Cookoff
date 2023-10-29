@@ -18,10 +18,10 @@
                 //mkdir($path);
                 echo $path;
                 $relativePath = getRelativePath($path);
-                echo $relativePath;
                 // TODO commenting out until can specify name
-                //$newFile = fopen($path.'/index.php', "w");
-                //fwrite($newFile, getBasePageHTML());
+                mkdir($path);
+                $newFile = fopen($path.'/index.php', "w");
+                fwrite($newFile, getBasePageHTML($relativePath));
                 break;
 
             default:

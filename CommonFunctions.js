@@ -22,3 +22,7 @@ function callPHPUtilityFunction(functionname, args, relativePath) {
         }
     });
 }
+
+function fetchNewPagePath(path) {
+    return path + "/" + document.getElementById("newPageName").value;
+}

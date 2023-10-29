@@ -24,13 +24,14 @@ function createNewFileButton() {
     $newPage = $path."/NewPage";
     $relativePath = getRelativePath($path);
     return "<script type='text/javascript' src='".$relativePath."CommonFunctions.js'></script>
-    <button onclick='callPHPUtilityFunction(\"createNewPage\", \"$newPage\", \"$relativePath\")'>Add New Page</button>";
+    <input type='text' id='newPageName' />
+    <button onclick='callPHPUtilityFunction(\"createNewPage\", fetchNewPagePath(\"$path\"), \"$relativePath\")'>Add New Page</button>";
 }
 
 function getRelativePath($absolutePath) {
     $splitPath = explode('/', $absolutePath);
     $relativePath = "";
-    // TODO this is magic number to get relative path from absolute path :/
+    // TODO this is magic number to get relative path from absolute path on my system :/
     for ($i = 0; $i < (count($splitPath) - 4); $i++) {
         $relativePath .= "../";
     }
