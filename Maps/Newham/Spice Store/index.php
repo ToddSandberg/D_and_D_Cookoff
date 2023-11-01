@@ -7,6 +7,6 @@
 </head>
 <body>
 	<?php generateHeader(); ?>
-    <p>A small backalley store owned by <?php createLink("Characters/", "Nell Armstrong"); ?></p>
+    <p>A small backalley store owned by <?php echo createLink("Characters/", "Nell Armstrong"); ?></p>
 </body>
 </html>

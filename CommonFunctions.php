@@ -8,7 +8,7 @@ function displayDirectory() {
 }
 
 function createLink($path, $name) {
-    echo "<a href='/d_and_d_cookoff/".$path.$name."'>".$name."</a>";
+    return "<a href='/d_and_d_cookoff/".$path.$name."'>".$name."</a>";
 }
 
 function generateHeader($pageNameOverride = null) {
@@ -17,6 +17,24 @@ function generateHeader($pageNameOverride = null) {
     } else {
         echo "<h1><a href='/d_and_d_cookoff'>D&D Cookoff</a></h1><h3>".basename(getcwd())."</h3>";
     }
+}
+
+function renderCharacterInfo($charJson) {
+    $charHtml = "";
+
+    // Locations
+    $charHtml .= "<p><b>Locations:</b> ";
+    foreach($charJson["locations"] as $location) {
+        $charHtml .= createLink($location["linkPath"], $location["name"]);
+    }
+    $charHtml .= "</p>";
+
+    foreach($charJson["descriptionLines"] as $descriptionLine) {
+        $charHtml .= "<p>".$descriptionLine."</p>";
+    }
+
+    echo $charHtml;
+    //echo $playerchievosjson["playerstats"]["achievements"];
 }
 
 function createNewFileButton() {

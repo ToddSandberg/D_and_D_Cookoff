@@ -1,0 +1,12 @@
+{
+    "locations": [
+        {
+            "name": "Spice Store",
+            "linkPath": "Maps/Newham/"
+        }
+    ],
+    "descriptionLines": [
+        "Bulky man with (cookoff equivalent) australian accent.",
+        "Sells a large variety of spices, including a special premium blend."
+    ]
+}
