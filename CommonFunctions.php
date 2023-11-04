@@ -2,9 +2,14 @@
 
 function displayDirectory() {
     $dirs = array_filter(glob('*'), 'is_dir');
+    echo "<div class='directory'>";
+    echo "<p>Subfolders</p>";
+    echo "<ul>";
     foreach($dirs as $value){
-        echo "<a href=".rawurlencode($value).">".$value."</a></br>";
+        echo "<li><a href=".rawurlencode($value).">".$value."</a></li>";
     }
+    echo "</ul>";
+    echo "</div>";
 }
 
 function createLink($path, $name) {
@@ -63,6 +68,7 @@ function getBasePageHTML($relativePath) {
     <html>
     <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="'.$relativePath.'index.css">
     </head>
     <body>
     <?php

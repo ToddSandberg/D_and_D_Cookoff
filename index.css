@@ -1,0 +1,30 @@
+body {
+    font-family: monospace;
+    background-color: #e6eef9;
+    color: #7288a2;
+    margin: 25px;
+}
+
+h2, h3 {
+    text-decoration: underline;
+}
+
+a {
+    color: #03b5d2;
+}
+
+ul {
+    list-style-image: url('listarrow.png');
+}
+
+.directory p {
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+
+button {
+    background-color: #7288a2;
+    border-radius: 2px;
+    border: 1px solid black;
+    color: white;
+}
