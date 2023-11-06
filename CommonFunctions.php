@@ -16,6 +16,12 @@ function createLink($path, $name) {
     return "<a href='/d_and_d_cookoff/".$path.$name."'>".$name."</a>";
 }
 
+function stylesheet() {
+    $path = str_replace("\\", "/" , getcwd());
+    echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">';
+    echo "<link rel='stylesheet' href='".getRelativePath($path)."index.css'>";
+}
+
 function generateHeader($pageNameOverride = null) {
     if ($pageNameOverride != null) {
         echo "<h1><a href='/d_and_d_cookoff'>D&D Cookoff</a></h1><h3>".$pageNameOverride."</h3>";
