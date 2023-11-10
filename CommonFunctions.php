@@ -45,7 +45,22 @@ function renderCharacterInfo($charJson) {
     }
 
     echo $charHtml;
-    //echo $playerchievosjson["playerstats"]["achievements"];
+}
+
+function renderMonsterInfo($monsterJson) {
+    $charHtml = "";
+
+    $charHtml .= "<p><b>AC:</b> ".$monsterJson["AC"]."</p>";
+    $charHtml .= "<p><b>HP:</b> ".$monsterJson["HP"]."</p>";
+    $charHtml .= "<p><b>Speed:</b> ".$monsterJson["Speed"]."</p>";
+    $charHtml .= "<p><b>STR:</b> ".$monsterJson["STR"]."</p>";
+    $charHtml .= "<p><b>DEX:</b> ".$monsterJson["DEX"]."</p>";
+    $charHtml .= "<p><b>CON:</b> ".$monsterJson["CON"]."</p>";
+    $charHtml .= "<p><b>INT:</b> ".$monsterJson["INT"]."</p>";
+    $charHtml .= "<p><b>WIS:</b> ".$monsterJson["WIS"]."</p>";
+    $charHtml .= "<p><b>CHA:</b> ".$monsterJson["CHA"]."</p>";
+
+    echo $charHtml;
 }
 
 function createNewFileButton() {
@@ -73,8 +88,8 @@ function getBasePageHTML($relativePath) {
     <!DOCTYPE html>
     <html>
     <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="'.$relativePath.'index.css">
+    <?php stylesheet(); ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
     <?php
