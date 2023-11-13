@@ -60,6 +60,13 @@ function renderMonsterInfo($monsterJson) {
     $charHtml .= "<p><b>WIS:</b> ".$monsterJson["WIS"]."</p>";
     $charHtml .= "<p><b>CHA:</b> ".$monsterJson["CHA"]."</p>";
 
+    // Ingredients
+    $charHtml .= "<p><b>Ingredients:</b> ";
+    foreach($monsterJson["Ingredients"] as $ingredient) {
+        $charHtml .= createLink($ingredient["linkPath"], $ingredient["name"]);
+    }
+    $charHtml .= "</p>";
+
     echo $charHtml;
 }
 
