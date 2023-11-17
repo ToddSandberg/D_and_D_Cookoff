@@ -1,7 +1,0 @@
-Cookbook level: 1
-
-Preparation: Boil or steam
-
-Taste: tastes like crab
-
-Resources: Crab meat, crab shell

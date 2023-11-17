@@ -47,6 +47,16 @@ function renderCharacterInfo($charJson) {
     echo $charHtml;
 }
 
+function renderIngredientInfo($ingJson) {
+    $charHtml = "";
+
+    $charHtml .= "<p><b>Cookbook Level:</b> ".$monsterJson["Level"]."</p>";
+    $charHtml .= "<p><b>Preperation:</b> ".$monsterJson["Preperation"]."</p>";
+    $charHtml .= "<p><b>Taste:</b> ".$monsterJson["Taste"]."</p>";
+
+    echo $charHtml;
+}
+
 function renderMonsterInfo($monsterJson) {
     $charHtml = "";
 
