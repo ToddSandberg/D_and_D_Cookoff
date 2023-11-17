@@ -50,9 +50,9 @@ function renderCharacterInfo($charJson) {
 function renderIngredientInfo($ingJson) {
     $charHtml = "";
 
-    $charHtml .= "<p><b>Cookbook Level:</b> ".$monsterJson["Level"]."</p>";
-    $charHtml .= "<p><b>Preperation:</b> ".$monsterJson["Preperation"]."</p>";
-    $charHtml .= "<p><b>Taste:</b> ".$monsterJson["Taste"]."</p>";
+    $charHtml .= "<p><b>Cookbook Level:</b> ".$ingJson["Level"]."</p>";
+    $charHtml .= "<p><b>Preparation:</b> ".$ingJson["Preparation"]."</p>";
+    $charHtml .= "<p><b>Taste:</b> ".$ingJson["Taste"]."</p>";
 
     echo $charHtml;
 }

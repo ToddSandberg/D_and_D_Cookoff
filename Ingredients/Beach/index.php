@@ -9,8 +9,11 @@
 	<?php
 		generateHeader();
 		displayDirectory();
-		renderIngredientInfo(json_decode(file_get_contents("CrabMeat.json"), true));
-		renderIngredientInfo(json_decode(file_get_contents("OctopusMeat.json"), true));
+	?>
+	<h5>Level 0</h5>
+	<?php
+		renderIngredientInfo(json_decode(file_get_contents("Level_0/CrabMeat.json"), true));
+		renderIngredientInfo(json_decode(file_get_contents("Level_0/OctopusMeat.json"), true));
 	?>
 </body>
 </html>
