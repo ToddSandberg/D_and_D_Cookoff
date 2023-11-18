@@ -1,5 +1,12 @@
 {
+    "Name": "Crab",
     "Level": 1,
     "Preparation": "Boil or steam",
-    "Taste": "tastes like crab"
+    "Taste": "tastes like crab",
+    "Sources": [
+        {
+            "name": "Crab",
+            "linkPath": "Monsters/"
+        }
+    ]
 }

@@ -50,9 +50,20 @@ function renderCharacterInfo($charJson) {
 function renderIngredientInfo($ingJson) {
     $charHtml = "";
 
+    $charHtml .= "<h5>".$ingJson["Name"]."</h5>";
     $charHtml .= "<p><b>Cookbook Level:</b> ".$ingJson["Level"]."</p>";
     $charHtml .= "<p><b>Preparation:</b> ".$ingJson["Preparation"]."</p>";
     $charHtml .= "<p><b>Taste:</b> ".$ingJson["Taste"]."</p>";
+
+    // Locations
+    $charHtml .= "<p><b>Sources:</b> ";
+    if (array_key_exists("Sources", $ingJson) && $ingJson["Sources"] != null) {
+        foreach($ingJson["Sources"] as $source) {
+            $charHtml .= createLink($source["linkPath"], $source["name"]);
+        }
+    }
+    $charHtml .= "</p>";
+
 
     echo $charHtml;
 }
