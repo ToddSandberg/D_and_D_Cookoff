@@ -18,7 +18,6 @@
                 //mkdir($path);
                 echo $path;
                 $relativePath = getRelativePath($path);
-                // TODO commenting out until can specify name
                 mkdir($path);
                 $newFile = fopen($path.'/index.php', "w");
                 fwrite($newFile, getBasePageHTML($relativePath));

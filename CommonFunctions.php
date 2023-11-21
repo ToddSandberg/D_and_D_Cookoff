@@ -91,6 +91,31 @@ function renderMonsterInfo($monsterJson) {
     echo $charHtml;
 }
 
+// TODO make this recursive so any amount of layers works
+function genericJsonRender($json) {
+    $newHtml = "";
+
+    foreach ($json as $key => $value) {
+        if (is_array($value)) {
+            $newHtml .= "<p><b>".$key.":</b> ";
+            // Check if array is link
+            foreach ($value as $arrayKey => $arrayValue) {
+                // TODO this assume if there is an array of arrays it is a link, which it should not
+                if (is_array($arrayValue)) {
+                    $newHtml .= createLink($arrayValue["linkPath"], $arrayValue["name"]);
+                } else {
+                    $newHtml .= $arrayValue;
+                }
+            }
+            $newHtml .= "</p>";
+        } else {
+            $newHtml .= "<p><b>".$key.":</b> ".$value."</p>";
+        }
+    }
+
+    echo $newHtml;
+}
+
 function createNewFileButton() {
     $path = str_replace("\\", "/" , getcwd());
     $newPage = $path."/NewPage";
@@ -98,6 +123,11 @@ function createNewFileButton() {
     return "<script type='text/javascript' src='".$relativePath."CommonFunctions.js'></script>
     <input type='text' id='newPageName' />
     <button onclick='callPHPUtilityFunction(\"createNewPage\", fetchNewPagePath(\"$path\"), \"$relativePath\")'>Add New Page</button>";
+}
+
+function getCurrentRelativePath() {
+    $path = str_replace("\\", "/" , getcwd());
+    return  getRelativePath($path);
 }
 
 function getRelativePath($absolutePath) {
