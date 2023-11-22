@@ -8,7 +8,7 @@
 <body>
     <?php
         generateHeader();
-        genericJsonRender(json_decode(file_get_contents("character.json"), true));
+        echo genericJsonRender(json_decode(file_get_contents("character.json"), true));
     ?>
 </body>
 </html>

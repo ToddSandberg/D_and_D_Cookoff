@@ -12,8 +12,8 @@
 	?>
 	<h5>Level 0</h5>
 	<?php
-		genericJsonRender(json_decode(file_get_contents("Level_0/CrabMeat.json"), true));
-		genericJsonRender(json_decode(file_get_contents("Level_0/OctopusMeat.json"), true));
+		echo genericJsonRender(json_decode(file_get_contents("Level_0/CrabMeat.json"), true));
+		echo genericJsonRender(json_decode(file_get_contents("Level_0/OctopusMeat.json"), true));
 	?>
 </body>
 </html>

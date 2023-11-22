@@ -30,7 +30,8 @@ function generateHeader($pageNameOverride = null) {
     }
 }
 
-function renderCharacterInfo($charJson) {
+// TODO use generic function for everything
+/*function renderCharacterInfo($charJson) {
     $charHtml = "";
 
     // Locations
@@ -89,31 +90,35 @@ function renderMonsterInfo($monsterJson) {
     $charHtml .= "</p>";
 
     echo $charHtml;
-}
+}*/
 
-// TODO make this recursive so any amount of layers works
 function genericJsonRender($json) {
     $newHtml = "";
 
+    // Hardcoded that if json has linkPath and name field it is intended to be a link
+    if (array_key_exists("linkPath", $json) && array_key_exists("name", $json)) {
+        $newHtml .= createLink($json["linkPath"], $json["name"]);
+        return $newHtml;
+    }
+
     foreach ($json as $key => $value) {
         if (is_array($value)) {
-            $newHtml .= "<p><b>".$key.":</b> ";
-            // Check if array is link
-            foreach ($value as $arrayKey => $arrayValue) {
-                // TODO this assume if there is an array of arrays it is a link, which it should not
-                if (is_array($arrayValue)) {
-                    $newHtml .= createLink($arrayValue["linkPath"], $arrayValue["name"]);
-                } else {
-                    $newHtml .= $arrayValue;
-                }
+            if(!is_numeric($key)) {
+                $newHtml .= "<p><b>".$key.":</b> ";
+                $newHtml .= genericJsonRender($value);
+                $newHtml .= "</p>";
+            } else {
+                $newHtml .= genericJsonRender($value);
             }
-            $newHtml .= "</p>";
+        } else if(is_numeric($key)) {
+            // If key is numeric assume its a numbered list and key does not need to be printed
+            $newHtml .= $value;
         } else {
             $newHtml .= "<p><b>".$key.":</b> ".$value."</p>";
         }
     }
 
-    echo $newHtml;
+    return $newHtml;
 }
 
 function createNewFileButton() {

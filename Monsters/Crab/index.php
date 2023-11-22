@@ -8,7 +8,7 @@
     <body>
     <?php
         generateHeader();
-        genericJsonRender(json_decode(file_get_contents("monster.json"), true));
+        echo genericJsonRender(json_decode(file_get_contents("monster.json"), true));
         displayDirectory();
     ?>
     </body>
