@@ -92,6 +92,10 @@ function renderMonsterInfo($monsterJson) {
     echo $charHtml;
 }*/
 
+function appbar() {
+    echo "<div class='appbar'></div>";
+}
+
 function genericJsonRender($json) {
     $newHtml = "";
 
@@ -155,10 +159,13 @@ function getBasePageHTML($relativePath) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
-    <?php
-        generateHeader();
-        displayDirectory();
-    ?>
+        <?php appbar ?>
+        <div class="appContent">
+            <?php
+                generateHeader();
+                displayDirectory();
+            ?>
+        </div>
     </body>
     </html>';
 }
