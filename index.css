@@ -35,6 +35,11 @@ button {
     background-color: #7288a2;
     margin: 0;
     position: absolute;
+    display: inline-block;
+}
+
+.appbar > form {
+    display: inline;
 }
 
 .appContent {

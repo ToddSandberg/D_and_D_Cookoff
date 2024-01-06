@@ -93,7 +93,17 @@ function renderMonsterInfo($monsterJson) {
 }*/
 
 function appbar() {
-    echo "<div class='appbar'></div>";
+    echo "<div class='appbar'>
+        <a href=''>Home</a>".
+        searchbar()
+    ."</div>";
+}
+
+function searchbar() {
+    return '<form action="/d_and_d_cookoff/search.php" method="get">
+        <input type="text" name="file">
+        <button type="submit">Search</button>
+    </form>';
 }
 
 function genericJsonRender($json) {
