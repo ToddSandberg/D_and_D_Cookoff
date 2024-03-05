@@ -94,7 +94,7 @@ function renderMonsterInfo($monsterJson) {
 
 function appbar() {
     echo "<div class='appbar'>
-        <a href=''>Home</a>".
+        <a href='/d_and_d_cookoff'>Home</a>".
         searchbar()
     ."</div>";
 }
@@ -172,6 +172,7 @@ function getBasePageHTML($relativePath) {
         <?php appbar ?>
         <div class="appContent">
             <?php
+                appbar();
                 generateHeader();
                 displayDirectory();
             ?>

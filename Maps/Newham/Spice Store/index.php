@@ -6,7 +6,10 @@
 	<?php stylesheet(); ?>
 </head>
 <body>
-	<?php generateHeader(); ?>
+	<?php
+		appbar();
+		generateHeader();
+	?>
     <p>A small backalley store owned by <?php echo createLink("Characters/", "Nell Armstrong"); ?></p>
 </body>
 </html>

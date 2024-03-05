@@ -8,6 +8,7 @@
     </head>
     <body>
     <?php
+		appbar();
         generateHeader();
         displayDirectory();
         echo createNewFileButton();

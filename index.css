@@ -30,10 +30,12 @@ button {
 
 .appbar {
     top: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
     height: 50px;
     width: 100%;
     background-color: #7288a2;
-    margin: 0;
+    margin: 0px;
     position: absolute;
     display: inline-block;
 }

@@ -7,6 +7,7 @@
     </head>
     <body>
     <?php
+		appbar();
         generateHeader();
         echo genericJsonRender(json_decode(file_get_contents("monster.json"), true));
         displayDirectory();

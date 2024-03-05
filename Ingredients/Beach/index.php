@@ -7,6 +7,7 @@
 </head>
 <body>
 	<?php
+		appbar();
 		generateHeader();
 		displayDirectory();
 	?>

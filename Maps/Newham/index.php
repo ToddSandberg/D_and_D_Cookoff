@@ -6,7 +6,10 @@
     <?php stylesheet(); ?>
 </head>
 <body>
-	<?php generateHeader(); ?>
+	<?php
+		appbar();
+        generateHeader();
+    ?>
     <div style="width: 100vw;height: 100vh;overflow: hidden;">
 	    <img style="width: 35%;height: 100%;" src="wipotter.png"/>
     </div>

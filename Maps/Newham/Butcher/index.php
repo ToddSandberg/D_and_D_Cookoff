@@ -7,7 +7,10 @@
     <?php stylesheet(); ?>
 </head>
 <body>
-    <?php generateHeader(); ?>
+    <?php
+		appbar();
+        generateHeader();
+    ?>
     <p>
         Butcher store in the main market owned by <a href="/d_and_d_cookoff/Characters/Isa Fleisher">Isa Fleisher</a>
     </p>

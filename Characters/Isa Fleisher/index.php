@@ -6,6 +6,9 @@
     <?php stylesheet(); ?>
 </head>
 <body>
-    <?php generateHeader(); ?>
+    <?php
+		appbar();
+        generateHeader();
+    ?>
 </body>
 </html>
