@@ -93,9 +93,16 @@ function renderMonsterInfo($monsterJson) {
 }*/
 
 function appbar() {
+    $dirs = array_filter(glob(dirname(__FILE__).'/*'), 'is_dir');
+    $toolbarButtons = "";
+    foreach ($dirs as $dir) {
+        $pathArr = explode("/", $dir);
+        $toolbarButtons .= "<a href='/$dir'>".$pathArr[count($pathArr)-1]."</a>";
+    }
     echo "<div class='appbar'>
         <a href='/d_and_d_cookoff'>Home</a>".
-        searchbar()
+        searchbar().
+        $toolbarButtons
     ."</div>";
 }
 
