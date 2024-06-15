@@ -97,7 +97,9 @@ function appbar() {
     $toolbarButtons = "";
     foreach ($dirs as $dir) {
         $pathArr = explode("/", $dir);
-        $toolbarButtons .= "<a href='/$dir'>".$pathArr[count($pathArr)-1]."</a>";
+        $title = $pathArr[count($pathArr)-1];
+        // TODO make this so its not hard coded url
+        $toolbarButtons .= "<div class='tabButton' onclick=\"location.href='http://localhost/d_and_d_cookoff/$title';\">$title</div>";
     }
     echo "<div class='appbar'>
         <a href='/d_and_d_cookoff'>Home</a>".

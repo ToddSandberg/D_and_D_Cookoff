@@ -28,16 +28,35 @@ button {
     color: white;
 }
 
+.tabButton {
+    min-width: 100px;
+    border: 1px, solid, black;
+    color: white;
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.tabButton:hover {
+    background-color: #e6eef9;
+    cursor: pointer;
+    color: #7288a2;
+}
+
 .appbar {
     top: 0px;
-    padding-top: 10px;
-    padding-left: 10px;
     height: 50px;
     width: 100%;
     background-color: #7288a2;
     margin: 0px;
     position: absolute;
     display: inline-block;
+}
+
+.appbar > * {
+    top: 50%;
+    vertical-align: middle;
 }
 
 .appbar > form {
