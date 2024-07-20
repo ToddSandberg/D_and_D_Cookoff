@@ -178,12 +178,12 @@ function getBasePageHTML($relativePath) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
-        <?php appbar ?>
+        <?php appbar(); ?>
         <div class="appContent">
             <?php
-                appbar();
                 generateHeader();
                 displayDirectory();
+			    echo createNewFileButton();
             ?>
         </div>
     </body>

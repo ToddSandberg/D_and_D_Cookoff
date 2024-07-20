@@ -21,6 +21,7 @@
                 mkdir($path);
                 $newFile = fopen($path.'/index.php', "w");
                 fwrite($newFile, getBasePageHTML($relativePath));
+                $aResult['result'] = 'Successfully added page';
                 break;
 
             default:
