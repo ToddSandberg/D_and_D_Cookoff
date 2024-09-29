@@ -7,16 +7,16 @@ function callPHPUtilityFunction(functionname, args, relativePath) {
         data: {functionname, arguments: args},
 
         success: function (obj, textstatus) {
-                    if( !('error' in obj) ) {
-                        //TODO add alert to page
-                        //alert("Success! Please refresh to see results.");
-                        console.log("Success!");
-                        window.location.reload();
-                    }
-                    else {
-                        console.log(obj.error);
-                    }
-                },
+            if( !('error' in obj) ) {
+                //TODO add alert to page
+                //alert("Success! Please refresh to see results.");
+                console.log("Success!");
+                window.location.reload();
+            }
+            else {
+                console.log(obj.error);
+            }
+        },
 
         error: function(xhr, status, error) {
             if (error) {

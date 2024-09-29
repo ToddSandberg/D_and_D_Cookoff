@@ -16,7 +16,6 @@
             case 'createNewPage':
                 $path = $_POST['arguments'];
                 //mkdir($path);
-                echo $path;
                 $relativePath = getRelativePath($path);
                 mkdir($path);
                 $newFile = fopen($path.'/index.php', "w");
