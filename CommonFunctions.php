@@ -149,8 +149,11 @@ function createNewFileButton() {
     $newPage = $path."/NewPage";
     $relativePath = getRelativePath($path);
     return "<script type='text/javascript' src='".$relativePath."CommonFunctions.js'></script>
-    <input type='text' id='newPageName' />
-    <button onclick='callPHPUtilityFunction(\"createNewPage\", fetchNewPagePath(\"$path\"), \"$relativePath\")'>Add New Page</button>";
+    <form action='/#' onsubmit='event.preventDefault(); callPHPUtilityFunction(\"createNewPage\", fetchNewPagePath(\"$path\"), \"$relativePath\");'>
+        <input type='text' id='newPageName' />
+        <input type='submit' value='Add New Page'/>
+    </form>
+    ";
 }
 
 function getCurrentRelativePath() {
@@ -174,8 +177,8 @@ function getBasePageHTML($relativePath) {
     <!DOCTYPE html>
     <html>
     <head>
-    <?php stylesheet(); ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <?php stylesheet(); ?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <?php appbar(); ?>
