@@ -28,6 +28,13 @@ button {
     color: white;
 }
 
+input[type=submit] {
+    background-color: #7288a2;
+    border-radius: 2px;
+    border: 1px solid black;
+    color: white;
+}
+
 .tabButton {
     min-width: 100px;
     border: 1px, solid, black;
