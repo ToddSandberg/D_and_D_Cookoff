@@ -101,10 +101,28 @@ function appbar() {
         // TODO make this so its not hard coded url
         $toolbarButtons .= "<div class='tabButton' onclick=\"location.href='http://localhost/d_and_d_cookoff/$title';\">$title</div>";
     }
-    echo "<div class='appbar'>
+    echo "<script>
+        window.addEventListener('resize', function(event) {
+            console.log('resize event', event);
+            if (event.target.innerWidth < 1100) {
+                document.getElementById('toolbarButtons').style.display = 'none';
+                document.getElementById('toolbarHamburger').style.display = 'inline';
+            } else {
+                document.getElementById('toolbarButtons').style.display = 'inline';
+                document.getElementById('toolbarHamburger').style.display = 'none';
+            }
+        }, true);
+    </script>
+    <div class='appbar'>
         <a href='/d_and_d_cookoff'>Home</a>".
         searchbar().
-        $toolbarButtons
+        "<div id='toolbarButtons' style='display:inline'>".
+            $toolbarButtons.
+        "</div>
+        <div id='toolbarHamburger' style='display:none'>
+            <div class='tabButton' onclick=\"\">...</div>
+        </div>
+        "
     ."</div>";
 }
 
