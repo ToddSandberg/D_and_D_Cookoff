@@ -74,3 +74,27 @@ input[type=submit] {
     margin-top: 50px;
     margin-left: 25px;
 }
+
+.dropdown {
+    position: absolute;
+    background-color: #7288a2;
+    border-radius: 10px;
+    left: 325px;
+    top:50px;
+    width: auto;
+}
+
+.dropdownButton {
+    min-width: 100px;
+    border-bottom: 1px, solid, black;
+    color: white;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.dropdownButton:hover {
+    background-color: #e6eef9;
+    cursor: pointer;
+    color: #7288a2;
+}

@@ -95,11 +95,13 @@ function renderMonsterInfo($monsterJson) {
 function appbar() {
     $dirs = array_filter(glob(dirname(__FILE__).'/*'), 'is_dir');
     $toolbarButtons = "";
+    $dropdownButtons = "";
     foreach ($dirs as $dir) {
         $pathArr = explode("/", $dir);
         $title = $pathArr[count($pathArr)-1];
         // TODO make this so its not hard coded url
         $toolbarButtons .= "<div class='tabButton' onclick=\"location.href='http://localhost/d_and_d_cookoff/$title';\">$title</div>";
+        $dropdownButtons .= "<div class='dropdownButton' onclick=\"location.href='http://localhost/d_and_d_cookoff/$title';\">$title</div>";
     }
     echo "<script>
         window.addEventListener('resize', function(event) {
@@ -112,6 +114,24 @@ function appbar() {
                 document.getElementById('toolbarHamburger').style.display = 'none';
             }
         }, true);
+
+        window.addEventListener('load', function(event) {
+            if (window.innerWidth < 1100) {
+                document.getElementById('toolbarButtons').style.display = 'none';
+                document.getElementById('toolbarHamburger').style.display = 'inline';
+            } else {
+                document.getElementById('toolbarButtons').style.display = 'inline';
+                document.getElementById('toolbarHamburger').style.display = 'none';
+            }
+        });
+
+        function openHamburger() {
+            if (document.getElementById('hamburgerDropdown').style.display == 'inline') {
+                document.getElementById('hamburgerDropdown').style.display = 'none';
+            } else {
+                document.getElementById('hamburgerDropdown').style.display = 'inline';
+            }
+        }
     </script>
     <div class='appbar'>
         <a href='/d_and_d_cookoff'>Home</a>".
@@ -120,7 +140,10 @@ function appbar() {
             $toolbarButtons.
         "</div>
         <div id='toolbarHamburger' style='display:none'>
-            <div class='tabButton' onclick=\"\">...</div>
+            <div class='tabButton' onclick=\"openHamburger()\">...</div>
+            <div id='hamburgerDropdown' class='dropdown' style='display:none'>".
+                $dropdownButtons.
+            "</div>
         </div>
         "
     ."</div>";
